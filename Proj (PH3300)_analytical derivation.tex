@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+{\centering \textbf{\Large Magnetic Field of a Circular Current Loop} \par}
+
+\[
+P=(0,\theta,z)=\mathbf{r}
+\]
+
+\[
+Q=(a,\theta,0)=\mathbf{r}'
+\]
+
+\[
+\mathbf{R}
+=\mathbf{r}-\mathbf{r}'
+=(-a,0,z)
+=-a\hat{\boldsymbol\rho}+z\hat{\mathbf z}
+\]
+
+\[
+R=|\mathbf{r}-\mathbf{r}'|
+=\sqrt{a^2+z^2}
+\]
+
+\textbf{Biot-Savart law}
+
+\[
+\mathbf{B}
+=
+\frac{\mu_0 I}{4\pi}
+\int
+\frac{d\boldsymbol{\ell}\times\mathbf{R}}
+{R^3}
+\]
+
+For $d\boldsymbol{\ell}$, the length vector of the wire element
+in the direction of current.
+
+Since a current carried by a circular loop,$d\boldsymbol{\ell}$ can be expressed by
+
+\[
+d\boldsymbol{\ell}
+=
+a\,d\theta\,\hat{\boldsymbol{\theta}}
+\]
+
+Substitution:
+
+\[
+\mathbf{B}
+=
+\frac{\mu_0 I}{4\pi}
+\int
+\frac{
+(a\,d\theta\,\hat{\boldsymbol{\theta}})
+\times
+(-a\hat{\boldsymbol\rho}+z\hat{\mathbf z})
+}
+{(a^2+z^2)^{3/2}}
+\]
+
+
+Cross product in cylindrical coordinates
+
+\[
+(a\,d\theta\,\hat{\boldsymbol{\theta}})
+\times
+(-a\hat{\boldsymbol\rho}+z\hat{\mathbf z})
+=
+\begin{vmatrix}
+\hat{\boldsymbol\rho} & \hat{\boldsymbol{\theta}} & \hat{\mathbf z}\\
+0 & a\,d\theta & 0\\
+-a & 0 & z
+\end{vmatrix}
+\]
+
+\[
+=
+(az\,d\theta)\hat{\boldsymbol\rho}
++
+(a^2\,d\theta)\hat{\mathbf z}
+\]
+
+Therefore, for $0\leq\theta\leq2\pi$,
+
+\[
+\mathbf{B}
+=
+\frac{\mu_0 I}{4\pi}
+\left(
+\int_0^{2\pi}
+\frac{az}{(a^2+z^2)^{3/2}}
+\,d\theta\,\hat{\boldsymbol\rho}
++
+\int_0^{2\pi}
+\frac{a^2}{(a^2+z^2)^{3/2}}
+\,d\theta\,\hat{\mathbf z}
+\right)
+\]
+
+Notice that
+
+\[
+\hat{\boldsymbol\rho}
+=
+\cos\theta\,\hat{\mathbf i}
++
+\sin\theta\,\hat{\mathbf j}
+\]
+
+If we calculate the $\hat{\boldsymbol\rho}$ part,
+
+\[
+\int_0^{2\pi}
+\frac{az}{(a^2+z^2)^{3/2}}
+\hat{\boldsymbol\rho}\,d\theta
+\]
+
+\[
+=
+\frac{az}{(a^2+z^2)^{3/2}}
+\left[
+\int_0^{2\pi}\cos\theta\,d\theta\,\hat{\mathbf i}
++
+\int_0^{2\pi}\sin\theta\,d\theta\,\hat{\mathbf j}
+\right]
+=0
+\]
+
+This is because $\hat{\boldsymbol\rho}$ is symmetric while $\theta$
+changes from $0$ to $2\pi$.
+
+Thus,
+
+\[
+\mathbf{B}
+=
+\left(
+\frac{\mu_0 I}{4\pi}
+\frac{a^2}{(a^2+z^2)^{3/2}}
+\int_0^{2\pi}d\theta
+\right)
+\hat{\mathbf z}
+\]
+
+and therefore
+
+\[
+\boxed{
+\mathbf{B}
+=
+\frac{\mu_0 I a^2}
+{2(a^2+z^2)^{3/2}}
+\hat{\mathbf z}
+}
+\]
+
+\end{document}
