@@ -34,7 +34,7 @@ for k = 1:length(N)
             l1 = [R * cos(theta1), R * sin(theta1), 0];
             l2 = [R * cos(theta2), R * sin(theta2), 0];
             dl = (l2 - l1);
-            dBi = ((mu0 * I/(4 * pi)) * cross(dl, r) / norm(r)^3); 
+            dBi = (mu0 * I/(4 * pi)) * cross(dl, r) / norm(r)^3; 
             B = B + dBi;
             % Calculating dBi and adding it to the total magnetic field
         end 
